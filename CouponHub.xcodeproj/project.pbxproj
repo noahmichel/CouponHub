@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		4F2793372B3DFB8F000E9EFB /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 4F2793362B3DFB8F000E9EFB /* Realm */; };
 		4F2793392B3DFB8F000E9EFB /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 4F2793382B3DFB8F000E9EFB /* RealmSwift */; };
+		4F27933F2B3E02E4000E9EFB /* Coupon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F27933E2B3E02E4000E9EFB /* Coupon.swift */; };
+		4F2793412B3E05EA000E9EFB /* CouponList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2793402B3E05EA000E9EFB /* CouponList.swift */; };
 		4F3631922952544E00180FD6 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3631912952544E00180FD6 /* HomeView.swift */; };
 		4F3631942953A75900180FD6 /* AddCouponView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3631932953A75900180FD6 /* AddCouponView.swift */; };
 		4F3631982954CDAD00180FD6 /* DatePicker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F3631972954CDAD00180FD6 /* DatePicker.storyboard */; };
@@ -43,6 +45,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4F27933E2B3E02E4000E9EFB /* Coupon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coupon.swift; sourceTree = "<group>"; };
+		4F2793402B3E05EA000E9EFB /* CouponList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponList.swift; sourceTree = "<group>"; };
 		4F3631912952544E00180FD6 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; usesTabs = 0; };
 		4F3631932953A75900180FD6 /* AddCouponView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCouponView.swift; sourceTree = "<group>"; };
 		4F3631972954CDAD00180FD6 /* DatePicker.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DatePicker.storyboard; sourceTree = "<group>"; };
@@ -94,6 +98,8 @@
 		4F27933A2B3DFD8F000E9EFB /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				4F27933E2B3E02E4000E9EFB /* Coupon.swift */,
+				4F2793402B3E05EA000E9EFB /* CouponList.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -329,7 +335,9 @@
 				4F4EE8AE294E3AFA00E7BB97 /* Persistence.swift in Sources */,
 				4F4EE8B1294E3AFA00E7BB97 /* CouponHub.xcdatamodeld in Sources */,
 				4F6F52DD294FA31600D93783 /* iCloudUserInfoView.swift in Sources */,
+				4F27933F2B3E02E4000E9EFB /* Coupon.swift in Sources */,
 				4F3631922952544E00180FD6 /* HomeView.swift in Sources */,
+				4F2793412B3E05EA000E9EFB /* CouponList.swift in Sources */,
 				4F36319A2954CEC500180FD6 /* ViewController.swift in Sources */,
 				4F36319C2954EAE700180FD6 /* ImagePicker.swift in Sources */,
 				4F4EE8A5294E3AF800E7BB97 /* CouponHub.swift in Sources */,
