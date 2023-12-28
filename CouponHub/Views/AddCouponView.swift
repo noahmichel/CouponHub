@@ -23,7 +23,7 @@ class AddCouponViewModel : ObservableObject {
     
 }
 
-struct AddCoupon: View {
+struct AddCouponView: View {
     
     var birthDateTxt = ViewController()
     @StateObject var userInfoVM : iCloudUserInfoViewModel
@@ -72,7 +72,7 @@ struct AddCoupon: View {
     }
 }
 
-extension AddCoupon {
+extension AddCouponView {
     
     private var header : some View {
 //        Text("\(userInfoVM.firstName) \(userInfoVM.lastName)'s Coupon Hub")
@@ -243,6 +243,6 @@ extension AddCoupon {
 
 struct AddCoupon_Previews: PreviewProvider {
     static var previews: some View {
-        AddCoupon(userInfoVM: iCloudUserInfoViewModel())
+        AddCouponView(userInfoVM: iCloudUserInfoViewModel())
     }
 }

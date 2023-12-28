@@ -22,7 +22,7 @@ class HomeViewModel : ObservableObject {
     
 }
 
-struct Home: View {
+struct HomeView: View {
     
     @StateObject var userInfoVM : iCloudUserInfoViewModel
     @StateObject var homeVM = HomeViewModel()
@@ -46,7 +46,7 @@ struct Home: View {
     }
 }
 
-extension Home {
+extension HomeView {
     
     private var header : some View {
         Text("\(userInfoVM.firstName) \(userInfoVM.lastName)'s Coupon Hub")
@@ -68,7 +68,7 @@ extension Home {
     
     private var addCouponButton : some View {
         NavigationLink {
-            AddCoupon(userInfoVM: userInfoVM)
+            AddCouponView(userInfoVM: userInfoVM)
         } label: {
             Text("Add a Coupon")
                 .font(.system(size: 32))
@@ -87,7 +87,7 @@ extension Home {
 
 struct Home_Previews: PreviewProvider {
     static var previews: some View {
-        Home(userInfoVM: iCloudUserInfoViewModel())
+        HomeView(userInfoVM: iCloudUserInfoViewModel())
             .previewDevice("iPhone 14 Pro")
     }
 }

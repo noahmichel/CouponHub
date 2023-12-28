@@ -88,7 +88,7 @@ class iCloudUserInfoViewModel: ObservableObject {
 
 }
 
-struct iCloudUserInfo: View {
+struct iCloudUserInfoView: View {
     
     @StateObject var vm = iCloudUserInfoViewModel()
 
@@ -102,14 +102,14 @@ struct iCloudUserInfo: View {
                 Text("Welcome: \(vm.firstName) \(vm.lastName)")
             }
         } else {
-            Home(userInfoVM: vm)
+            HomeView(userInfoVM: vm)
         }
     }
 }
 
 struct iCloudUserInfo_Previews: PreviewProvider {
     static var previews: some View {
-        iCloudUserInfo()
+        iCloudUserInfoView()
     }
 }
 

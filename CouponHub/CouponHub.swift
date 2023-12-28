@@ -1,5 +1,5 @@
 //
-//  CouponHubApp.swift
+//  CouponHub.swift
 //  CouponHub
 //
 //  Created by Noah Michel on 12/17/22.
@@ -8,12 +8,12 @@
 import SwiftUI
 
 @main
-struct CouponHubApp: App {
+struct CouponHub: App {
     let persistenceController = PersistenceController.shared
 
     var body: some Scene {
         WindowGroup {
-            iCloudUserInfo().environment(\.managedObjectContext, persistenceController.container.viewContext)
+            iCloudUserInfoView().environment(\.managedObjectContext, persistenceController.container.viewContext)
 //            ContentView()
 //                .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }

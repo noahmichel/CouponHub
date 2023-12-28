@@ -9,12 +9,12 @@
 /* Begin PBXBuildFile section */
 		4F2793372B3DFB8F000E9EFB /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 4F2793362B3DFB8F000E9EFB /* Realm */; };
 		4F2793392B3DFB8F000E9EFB /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 4F2793382B3DFB8F000E9EFB /* RealmSwift */; };
-		4F3631922952544E00180FD6 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3631912952544E00180FD6 /* Home.swift */; };
-		4F3631942953A75900180FD6 /* AddCoupon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3631932953A75900180FD6 /* AddCoupon.swift */; };
+		4F3631922952544E00180FD6 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3631912952544E00180FD6 /* HomeView.swift */; };
+		4F3631942953A75900180FD6 /* AddCouponView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3631932953A75900180FD6 /* AddCouponView.swift */; };
 		4F3631982954CDAD00180FD6 /* DatePicker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F3631972954CDAD00180FD6 /* DatePicker.storyboard */; };
 		4F36319A2954CEC500180FD6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3631992954CEC500180FD6 /* ViewController.swift */; };
 		4F36319C2954EAE700180FD6 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F36319B2954EAE700180FD6 /* ImagePicker.swift */; };
-		4F4EE8A5294E3AF800E7BB97 /* CouponHubApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4EE8A4294E3AF800E7BB97 /* CouponHubApp.swift */; };
+		4F4EE8A5294E3AF800E7BB97 /* CouponHub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4EE8A4294E3AF800E7BB97 /* CouponHub.swift */; };
 		4F4EE8A9294E3AFA00E7BB97 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F4EE8A8294E3AFA00E7BB97 /* Assets.xcassets */; };
 		4F4EE8AC294E3AFA00E7BB97 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F4EE8AB294E3AFA00E7BB97 /* Preview Assets.xcassets */; };
 		4F4EE8AE294E3AFA00E7BB97 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4EE8AD294E3AFA00E7BB97 /* Persistence.swift */; };
@@ -22,7 +22,7 @@
 		4F4EE8BC294E3AFA00E7BB97 /* CouponHubTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4EE8BB294E3AFA00E7BB97 /* CouponHubTests.swift */; };
 		4F4EE8C6294E3AFA00E7BB97 /* CouponHubUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4EE8C5294E3AFA00E7BB97 /* CouponHubUITests.swift */; };
 		4F4EE8C8294E3AFA00E7BB97 /* CouponHubUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4EE8C7294E3AFA00E7BB97 /* CouponHubUITestsLaunchTests.swift */; };
-		4F6F52DD294FA31600D93783 /* iCloudUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6F52DC294FA31600D93783 /* iCloudUserInfo.swift */; };
+		4F6F52DD294FA31600D93783 /* iCloudUserInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6F52DC294FA31600D93783 /* iCloudUserInfoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,13 +43,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4F3631912952544E00180FD6 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; usesTabs = 0; };
-		4F3631932953A75900180FD6 /* AddCoupon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCoupon.swift; sourceTree = "<group>"; };
+		4F3631912952544E00180FD6 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; usesTabs = 0; };
+		4F3631932953A75900180FD6 /* AddCouponView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCouponView.swift; sourceTree = "<group>"; };
 		4F3631972954CDAD00180FD6 /* DatePicker.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DatePicker.storyboard; sourceTree = "<group>"; };
 		4F3631992954CEC500180FD6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4F36319B2954EAE700180FD6 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		4F4EE8A1294E3AF800E7BB97 /* CouponHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CouponHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		4F4EE8A4294E3AF800E7BB97 /* CouponHubApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponHubApp.swift; sourceTree = "<group>"; };
+		4F4EE8A4294E3AF800E7BB97 /* CouponHub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponHub.swift; sourceTree = "<group>"; };
 		4F4EE8A8294E3AFA00E7BB97 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4F4EE8AB294E3AFA00E7BB97 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4F4EE8AD294E3AFA00E7BB97 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -61,7 +61,7 @@
 		4F4EE8C5294E3AFA00E7BB97 /* CouponHubUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponHubUITests.swift; sourceTree = "<group>"; };
 		4F4EE8C7294E3AFA00E7BB97 /* CouponHubUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponHubUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		4F6F52DB294FA1D200D93783 /* CouponHub.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CouponHub.entitlements; sourceTree = "<group>"; };
-		4F6F52DC294FA31600D93783 /* iCloudUserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iCloudUserInfo.swift; sourceTree = "<group>"; };
+		4F6F52DC294FA31600D93783 /* iCloudUserInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iCloudUserInfoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +91,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4F27933A2B3DFD8F000E9EFB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4F27933B2B3DFD9E000E9EFB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4F3631932953A75900180FD6 /* AddCouponView.swift */,
+				4F3631912952544E00180FD6 /* HomeView.swift */,
+				4F6F52DC294FA31600D93783 /* iCloudUserInfoView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4F27933C2B3DFEA9000E9EFB /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4F36319B2954EAE700180FD6 /* ImagePicker.swift */,
+				4F3631992954CEC500180FD6 /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		4F27933D2B3DFEEE000E9EFB /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				4F3631972954CDAD00180FD6 /* DatePicker.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
 		4F4EE898294E3AF800E7BB97 = {
 			isa = PBXGroup;
 			children = (
@@ -114,19 +148,17 @@
 		4F4EE8A3294E3AF800E7BB97 /* CouponHub */ = {
 			isa = PBXGroup;
 			children = (
+				4F27933D2B3DFEEE000E9EFB /* Storyboards */,
+				4F27933C2B3DFEA9000E9EFB /* Controllers */,
+				4F27933B2B3DFD9E000E9EFB /* Views */,
+				4F27933A2B3DFD8F000E9EFB /* Models */,
 				4F6F52DB294FA1D200D93783 /* CouponHub.entitlements */,
-				4F4EE8A4294E3AF800E7BB97 /* CouponHubApp.swift */,
+				4F4EE8A4294E3AF800E7BB97 /* CouponHub.swift */,
 				4F4EE8A8294E3AFA00E7BB97 /* Assets.xcassets */,
 				4F4EE8AD294E3AFA00E7BB97 /* Persistence.swift */,
 				4F4EE8B2294E3AFA00E7BB97 /* Info.plist */,
 				4F4EE8AF294E3AFA00E7BB97 /* CouponHub.xcdatamodeld */,
 				4F4EE8AA294E3AFA00E7BB97 /* Preview Content */,
-				4F6F52DC294FA31600D93783 /* iCloudUserInfo.swift */,
-				4F3631912952544E00180FD6 /* Home.swift */,
-				4F3631932953A75900180FD6 /* AddCoupon.swift */,
-				4F3631972954CDAD00180FD6 /* DatePicker.storyboard */,
-				4F3631992954CEC500180FD6 /* ViewController.swift */,
-				4F36319B2954EAE700180FD6 /* ImagePicker.swift */,
 			);
 			path = CouponHub;
 			sourceTree = "<group>";
@@ -296,12 +328,12 @@
 			files = (
 				4F4EE8AE294E3AFA00E7BB97 /* Persistence.swift in Sources */,
 				4F4EE8B1294E3AFA00E7BB97 /* CouponHub.xcdatamodeld in Sources */,
-				4F6F52DD294FA31600D93783 /* iCloudUserInfo.swift in Sources */,
-				4F3631922952544E00180FD6 /* Home.swift in Sources */,
+				4F6F52DD294FA31600D93783 /* iCloudUserInfoView.swift in Sources */,
+				4F3631922952544E00180FD6 /* HomeView.swift in Sources */,
 				4F36319A2954CEC500180FD6 /* ViewController.swift in Sources */,
 				4F36319C2954EAE700180FD6 /* ImagePicker.swift in Sources */,
-				4F4EE8A5294E3AF800E7BB97 /* CouponHubApp.swift in Sources */,
-				4F3631942953A75900180FD6 /* AddCoupon.swift in Sources */,
+				4F4EE8A5294E3AF800E7BB97 /* CouponHub.swift in Sources */,
+				4F3631942953A75900180FD6 /* AddCouponView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
