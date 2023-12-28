@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F2793372B3DFB8F000E9EFB /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 4F2793362B3DFB8F000E9EFB /* Realm */; };
+		4F2793392B3DFB8F000E9EFB /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 4F2793382B3DFB8F000E9EFB /* RealmSwift */; };
 		4F3631922952544E00180FD6 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3631912952544E00180FD6 /* Home.swift */; };
 		4F3631942953A75900180FD6 /* AddCoupon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3631932953A75900180FD6 /* AddCoupon.swift */; };
 		4F3631982954CDAD00180FD6 /* DatePicker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F3631972954CDAD00180FD6 /* DatePicker.storyboard */; };
@@ -67,6 +69,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F2793392B3DFB8F000E9EFB /* RealmSwift in Frameworks */,
+				4F2793372B3DFB8F000E9EFB /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,6 +172,10 @@
 			dependencies = (
 			);
 			name = CouponHub;
+			packageProductDependencies = (
+				4F2793362B3DFB8F000E9EFB /* Realm */,
+				4F2793382B3DFB8F000E9EFB /* RealmSwift */,
+			);
 			productName = CouponHub;
 			productReference = 4F4EE8A1294E3AF800E7BB97 /* CouponHub.app */;
 			productType = "com.apple.product-type.application";
@@ -240,6 +248,9 @@
 				Base,
 			);
 			mainGroup = 4F4EE898294E3AF800E7BB97;
+			packageReferences = (
+				4F2793352B3DFB8F000E9EFB /* XCRemoteSwiftPackageReference "realm-swift" */,
+			);
 			productRefGroup = 4F4EE8A2294E3AF800E7BB97 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -621,6 +632,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4F2793352B3DFB8F000E9EFB /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4F2793362B3DFB8F000E9EFB /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4F2793352B3DFB8F000E9EFB /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		4F2793382B3DFB8F000E9EFB /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4F2793352B3DFB8F000E9EFB /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		4F4EE8AF294E3AFA00E7BB97 /* CouponHub.xcdatamodeld */ = {
