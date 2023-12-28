@@ -7,6 +7,7 @@
 
 import SwiftUI
 import CloudKit
+import RealmSwift
 
 class HomeViewModel : ObservableObject {
     
@@ -27,6 +28,8 @@ struct HomeView: View {
     @StateObject var userInfoVM : iCloudUserInfoViewModel
     @StateObject var homeVM = HomeViewModel()
     
+    @ObservedRealmObject var couponList: CouponList
+    
     var body: some View {
         
         NavigationView {
@@ -35,9 +38,10 @@ struct HomeView: View {
                 header
                 addCouponButton
                 List {
-                    Text("Coupon 1")
-                    Text("Coupon 2")
-                    Text("Coupon 3")
+                    ForEach(couponList.CouponList) {
+                        coupon in
+                        Text("\(coupon.company)")
+                    }
                 }.listStyle(PlainListStyle())
                     
                 Spacer()
@@ -87,7 +91,7 @@ extension HomeView {
 
 struct Home_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView(userInfoVM: iCloudUserInfoViewModel())
+        HomeView(userInfoVM: iCloudUserInfoViewModel(), couponList: CouponList())
             .previewDevice("iPhone 14 Pro")
     }
 }

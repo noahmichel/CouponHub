@@ -8,7 +8,7 @@
 import Foundation
 import RealmSwift
 
-class Coupon: Object {
+class Coupon: Object, ObjectKeyIdentifiable {
     @Persisted(primaryKey: true) var _id: ObjectId
     @Persisted var company = ""
     @Persisted var discountCode = 0

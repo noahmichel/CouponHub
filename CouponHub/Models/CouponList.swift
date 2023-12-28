@@ -8,7 +8,7 @@
 import Foundation
 import RealmSwift
 
-class CouponList: Object {
+class CouponList: Object, ObjectKeyIdentifiable {
     @Persisted(primaryKey: true) var _id: ObjectId
     @Persisted var CouponList = RealmSwift.List<Coupon>()
 }
