@@ -9,7 +9,7 @@ import Foundation
 import RealmSwift
 
 class Coupon: Object, ObjectKeyIdentifiable {
-    @Persisted(primaryKey: true) var _id: ObjectId
+    @Persisted(primaryKey: true) var _id: ObjectId = ObjectId.generate()
     @Persisted var company = ""
     @Persisted var discountCode = 0
     @Persisted var couponDescription = ""

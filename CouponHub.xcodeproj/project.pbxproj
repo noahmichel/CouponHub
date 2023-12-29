@@ -11,6 +11,7 @@
 		4F2793392B3DFB8F000E9EFB /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 4F2793382B3DFB8F000E9EFB /* RealmSwift */; };
 		4F27933F2B3E02E4000E9EFB /* Coupon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F27933E2B3E02E4000E9EFB /* Coupon.swift */; };
 		4F2793412B3E05EA000E9EFB /* CouponList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2793402B3E05EA000E9EFB /* CouponList.swift */; };
+		4F2793442B3E0EFF000E9EFB /* Realm-Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2793432B3E0EFF000E9EFB /* Realm-Preview.swift */; };
 		4F3631922952544E00180FD6 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3631912952544E00180FD6 /* HomeView.swift */; };
 		4F3631942953A75900180FD6 /* AddCouponView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3631932953A75900180FD6 /* AddCouponView.swift */; };
 		4F3631982954CDAD00180FD6 /* DatePicker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F3631972954CDAD00180FD6 /* DatePicker.storyboard */; };
@@ -47,6 +48,7 @@
 /* Begin PBXFileReference section */
 		4F27933E2B3E02E4000E9EFB /* Coupon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coupon.swift; sourceTree = "<group>"; };
 		4F2793402B3E05EA000E9EFB /* CouponList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponList.swift; sourceTree = "<group>"; };
+		4F2793432B3E0EFF000E9EFB /* Realm-Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Realm-Preview.swift"; sourceTree = "<group>"; };
 		4F3631912952544E00180FD6 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; usesTabs = 0; };
 		4F3631932953A75900180FD6 /* AddCouponView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCouponView.swift; sourceTree = "<group>"; };
 		4F3631972954CDAD00180FD6 /* DatePicker.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DatePicker.storyboard; sourceTree = "<group>"; };
@@ -131,6 +133,14 @@
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
+		4F2793422B3E0EE4000E9EFB /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				4F2793432B3E0EFF000E9EFB /* Realm-Preview.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
 		4F4EE898294E3AF800E7BB97 = {
 			isa = PBXGroup;
 			children = (
@@ -154,6 +164,7 @@
 		4F4EE8A3294E3AF800E7BB97 /* CouponHub */ = {
 			isa = PBXGroup;
 			children = (
+				4F2793422B3E0EE4000E9EFB /* Util */,
 				4F27933D2B3DFEEE000E9EFB /* Storyboards */,
 				4F27933C2B3DFEA9000E9EFB /* Controllers */,
 				4F27933B2B3DFD9E000E9EFB /* Views */,
@@ -334,6 +345,7 @@
 			files = (
 				4F4EE8AE294E3AFA00E7BB97 /* Persistence.swift in Sources */,
 				4F4EE8B1294E3AFA00E7BB97 /* CouponHub.xcdatamodeld in Sources */,
+				4F2793442B3E0EFF000E9EFB /* Realm-Preview.swift in Sources */,
 				4F6F52DD294FA31600D93783 /* iCloudUserInfoView.swift in Sources */,
 				4F27933F2B3E02E4000E9EFB /* Coupon.swift in Sources */,
 				4F3631922952544E00180FD6 /* HomeView.swift in Sources */,

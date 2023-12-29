@@ -38,13 +38,12 @@ struct HomeView: View {
                 header
                 addCouponButton
                 List {
-                    ForEach(couponList.CouponList) {
-                        coupon in
-                        Text("\(coupon.company)")
-                    }
+                    ForEach(couponList.CouponList) { coupon in
+                        VStack(alignment: .leading, content: {
+                            Text("\(coupon.description)")
+                        })
+                    }.padding()
                 }.listStyle(PlainListStyle())
-                    
-                Spacer()
             }
         }.navigationBarHidden(true)
     }
@@ -91,7 +90,8 @@ extension HomeView {
 
 struct Home_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView(userInfoVM: iCloudUserInfoViewModel(), couponList: CouponList())
-            .previewDevice("iPhone 14 Pro")
+        let realm = realmWithData()
+        return HomeView(userInfoVM: iCloudUserInfoViewModel(), couponList: realm.objects(CouponList.self).first!)
+            .environment(\.realm, realm)
     }
 }
