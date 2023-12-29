@@ -31,21 +31,20 @@ struct HomeView: View {
     @ObservedRealmObject var couponList: CouponList
     
     var body: some View {
-        
-        NavigationView {
-            VStack (spacing: 0) {
-                safeAreaTop
-                header
-                addCouponButton
-                List {
-                    ForEach(couponList.CouponList) { coupon in
-                        VStack(alignment: .leading, content: {
-                            Text("\(coupon.description)")
-                        })
-                    }.padding()
-                }.listStyle(PlainListStyle())
+        VStack (spacing: 0) {
+            safeAreaTop
+            header
+            addCouponButton
+            List {
+                ForEach(couponList.CouponList) { coupon in
+                    couponCell(coupon: coupon)
+                }
+                .onDelete(perform: $couponList.CouponList.remove)
+                .onMove(perform: $couponList.CouponList.move)
             }
-        }.navigationBarHidden(true)
+            .navigationBarItems(trailing: EditButton())
+            .listStyle(PlainListStyle())
+        }
     }
 }
 
@@ -86,12 +85,24 @@ extension HomeView {
                 .padding(.vertical, 10)
         }
     }
+    
+    struct couponCell: View {
+        @ObservedRealmObject var coupon: Coupon
+        
+        var body: some View {
+            VStack(alignment: .leading) {
+                Text("\(coupon.description)")
+            }.padding()
+        }
+    }
 }
 
 struct Home_Previews: PreviewProvider {
     static var previews: some View {
         let realm = realmWithData()
-        return HomeView(userInfoVM: iCloudUserInfoViewModel(), couponList: realm.objects(CouponList.self).first!)
-            .environment(\.realm, realm)
+        return NavigationView {
+            HomeView(userInfoVM: iCloudUserInfoViewModel(), couponList: realm.objects(CouponList.self).first!)
+                .environment(\.realm, realm)
+        }
     }
 }
