@@ -11,15 +11,15 @@ import RealmSwift
 
 class HomeViewModel : ObservableObject {
     
-    private func saveCoupon(record: CKRecord) {
-        CKContainer.default().publicCloudDatabase.save(record) { returnedRecord, returnedError in
-            if let returnedRecord {
-                print("Successful Coupon Upload")
-            } else {
-                print("Error in Coupon Upload")
-            }
-        }
-    }
+//    private func saveCoupon(record: CKRecord) {
+//        CKContainer.default().publicCloudDatabase.save(record) { returnedRecord, returnedError in
+//            if let returnedRecord {
+//                print("Successful Coupon Upload")
+//            } else {
+//                print("Error in Coupon Upload")
+//            }
+//        }
+//    }
     
 }
 

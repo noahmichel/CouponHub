@@ -12,6 +12,7 @@
 		4F27933F2B3E02E4000E9EFB /* Coupon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F27933E2B3E02E4000E9EFB /* Coupon.swift */; };
 		4F2793412B3E05EA000E9EFB /* CouponList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2793402B3E05EA000E9EFB /* CouponList.swift */; };
 		4F2793442B3E0EFF000E9EFB /* Realm-Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2793432B3E0EFF000E9EFB /* Realm-Preview.swift */; };
+		4F2793462B3F6BC2000E9EFB /* CouponDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2793452B3F6BC2000E9EFB /* CouponDetailView.swift */; };
 		4F3631922952544E00180FD6 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3631912952544E00180FD6 /* HomeView.swift */; };
 		4F3631942953A75900180FD6 /* AddCouponView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3631932953A75900180FD6 /* AddCouponView.swift */; };
 		4F3631982954CDAD00180FD6 /* DatePicker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F3631972954CDAD00180FD6 /* DatePicker.storyboard */; };
@@ -49,6 +50,7 @@
 		4F27933E2B3E02E4000E9EFB /* Coupon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coupon.swift; sourceTree = "<group>"; };
 		4F2793402B3E05EA000E9EFB /* CouponList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponList.swift; sourceTree = "<group>"; };
 		4F2793432B3E0EFF000E9EFB /* Realm-Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Realm-Preview.swift"; sourceTree = "<group>"; };
+		4F2793452B3F6BC2000E9EFB /* CouponDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponDetailView.swift; sourceTree = "<group>"; };
 		4F3631912952544E00180FD6 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; usesTabs = 0; };
 		4F3631932953A75900180FD6 /* AddCouponView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCouponView.swift; sourceTree = "<group>"; };
 		4F3631972954CDAD00180FD6 /* DatePicker.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DatePicker.storyboard; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				4F3631932953A75900180FD6 /* AddCouponView.swift */,
 				4F3631912952544E00180FD6 /* HomeView.swift */,
 				4F6F52DC294FA31600D93783 /* iCloudUserInfoView.swift */,
+				4F2793452B3F6BC2000E9EFB /* CouponDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -346,6 +349,7 @@
 				4F4EE8AE294E3AFA00E7BB97 /* Persistence.swift in Sources */,
 				4F4EE8B1294E3AFA00E7BB97 /* CouponHub.xcdatamodeld in Sources */,
 				4F2793442B3E0EFF000E9EFB /* Realm-Preview.swift in Sources */,
+				4F2793462B3F6BC2000E9EFB /* CouponDetailView.swift in Sources */,
 				4F6F52DD294FA31600D93783 /* iCloudUserInfoView.swift in Sources */,
 				4F27933F2B3E02E4000E9EFB /* Coupon.swift in Sources */,
 				4F3631922952544E00180FD6 /* HomeView.swift in Sources */,
