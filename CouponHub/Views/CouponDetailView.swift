@@ -9,16 +9,17 @@ import SwiftUI
 import RealmSwift
 
 struct CouponDetailView: View {
-    @ObservedRealmObject var coupon: Coupon = Coupon()
-    @ObservedRealmObject var couponList: CouponList = CouponList()
+    @ObservedRealmObject var coupon: Coupon
     
     var body: some View {
-        Text("Coupon Deatil View")
+        List{
+            Text(coupon.company)
+        }
     }
 }
 
 struct CouponDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        CouponDetailView()
+        CouponDetailView(coupon: Coupon())
     }
 }

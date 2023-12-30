@@ -21,7 +21,9 @@ struct HomeView: View {
             addCouponButton
             List {
                 ForEach(couponList.CouponList) { coupon in
-                    couponCell(coupon: coupon)
+                    NavigationLink(destination: CouponDetailView(coupon: coupon)) {
+                        couponCell(coupon: coupon)
+                    }
                 }
                 .onDelete(perform: $couponList.CouponList.remove)
                 .onMove(perform: $couponList.CouponList.move)

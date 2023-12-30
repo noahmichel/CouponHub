@@ -57,7 +57,9 @@ struct AddCouponView: View {
                 addCouponButton
                     
             }
-        }.navigationBarHidden(true)
+        }
+        .navigationBarHidden(true)
+        .navigationBarItems(leading: navigationBarBackButtonHidden())
     }
 }
 
@@ -73,9 +75,9 @@ extension AddCouponView {
             .cornerRadius(0)
     }
     
-    private var safeAreaTop : some View {
-        LinearGradient(colors: [.white], startPoint: .top, endPoint: .bottom).edgesIgnoringSafeArea(.top).opacity(0.6).frame(maxWidth: .infinity, maxHeight: 0)
-    }
+//    private var safeAreaTop : some View {
+//        LinearGradient(colors: [.white], startPoint: .top, endPoint: .bottom).edgesIgnoringSafeArea(.top).opacity(0.6).frame(maxWidth: .infinity, maxHeight: 0)
+//    }
     
     private var addCouponButton : some View {
         Button {
