@@ -22,13 +22,13 @@ extension PreviewProvider {
     
     static func realmWithData(realm: Realm = emptyRealm()) -> Realm {
         
-        let  existingCoupons = realm.objects(Coupon.self)
+        let existingCoupons = realm.objects(Coupon.self)
         
         if existingCoupons.count == 0 {
             let couponList = CouponList()
             
             for i in 1...5 {
-                couponList.CouponList.append(Coupon(_id: ObjectId.generate(), company: "Company \(i)", couponDescription: "description \(i)", date: Date()))
+                couponList.CouponList.append(Coupon(_id: ObjectId.generate(), company: "Company \(i)", discountCode: "123\(i)", couponDescription: "description \(i)", date: Date()))
             }
             
             try? realm.write({

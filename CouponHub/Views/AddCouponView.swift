@@ -8,27 +8,15 @@
 import SwiftUI
 import CloudKit
 import UIKit
-
-class AddCouponViewModel : ObservableObject {
-    
-    @Published var company : String = ""
-    @Published var discountCode : String = ""
-    @Published var couponDescription : String = ""
-    @Published var expirationDate : Date = Date()
-    @Published var couponImage : Image = Image(systemName: "photo")
-    
-    func saveCoupon() {
-        
-    }
-    
-}
+import RealmSwift
 
 struct AddCouponView: View {
     
-    var birthDateTxt = ViewController()
-    @StateObject var userInfoVM : iCloudUserInfoViewModel
-    @StateObject var addCouponVM = AddCouponViewModel()
+    @ObservedRealmObject var coupon: Coupon = Coupon()
+    @ObservedRealmObject var couponList: CouponList
+    @State var couponSavedSuccessfully: Bool = false
     
+    var birthDateTxt = ViewController()
     @State var changeImage = false
     @State var openCameraRoll = false
     @State var selectedImage = UIImage()
@@ -39,13 +27,13 @@ struct AddCouponView: View {
         
         NavigationView {
             VStack {
-                //safeAreaTop
-                header
-                companyTextField
-                discountTextField
-                descriptionTextField
-                datePicker
-                photoPickerTitle
+                List {
+                    header
+                    companyTextField
+                    discountTextField
+                    descriptionTextField
+                    datePicker
+                    photoPickerTitle
                     HStack (spacing: 40) {
                         VStack {
                             ZStack {
@@ -63,6 +51,7 @@ struct AddCouponView: View {
                             }
                             photoPickerSubTitlePhotos
                         }
+                    }
                 }
                 Spacer()
                 addCouponButton
@@ -75,7 +64,6 @@ struct AddCouponView: View {
 extension AddCouponView {
     
     private var header : some View {
-//        Text("\(userInfoVM.firstName) \(userInfoVM.lastName)'s Coupon Hub")
         Text("New Coupon Details")
             .padding(.horizontal, 35.0)
             .frame(width: 400, height: 60)
@@ -91,7 +79,9 @@ extension AddCouponView {
     
     private var addCouponButton : some View {
         Button {
-//            saveCoupon()
+            $couponList.CouponList.append(coupon)
+            couponSavedSuccessfully = true
+
         } label: {
             Text("Save Coupon")
                 .font(.system(size: 32))
@@ -108,31 +98,27 @@ extension AddCouponView {
     }
     
     private var companyTextField : some View {
-        TextField("Company", text: $addCouponVM.company)
+        TextField("Company", text: $coupon.company)
             .frame(height: 50)
             .padding(.horizontal, 15)
-            .padding(.vertical, 5)
             .background(Color.gray.opacity(0.1))
             .font(.system(size: 24))
             .fontWeight(.light)
             .cornerRadius(10)
-            .padding(.horizontal)
     }
     
     private var discountTextField : some View {
-        TextField("Discount Code", text: $addCouponVM.discountCode)
+        TextField("Discount Code", text: $coupon.discountCode)
             .frame(height: 50)
             .padding(.horizontal, 15)
-            .padding(.vertical, 5)
             .background(Color.gray.opacity(0.1))
             .font(.system(size: 24))
             .fontWeight(.light)
             .cornerRadius(10)
-            .padding(.horizontal)
     }
     
     private var descriptionTextField : some View {
-        TextField("Discount Description", text: $addCouponVM.couponDescription, axis: .vertical)
+        TextField("Discount Description", text: $coupon.couponDescription, axis: .vertical)
             .frame(height: 100, alignment: .top)
             .padding(.horizontal, 15)
             .padding(.vertical, 10)
@@ -140,11 +126,10 @@ extension AddCouponView {
             .font(.system(size: 24))
             .fontWeight(.light)
             .cornerRadius(10)
-            .padding(.horizontal)
     }
     
     private var datePicker : some View {
-        DatePicker("Expiration Date", selection: $addCouponVM.expirationDate, in: Date()..., displayedComponents: .date)
+        DatePicker("Expiration Date", selection: $coupon.date, in: Date()..., displayedComponents: .date)
             .padding(.horizontal, 20)
             .padding(.vertical, 10)
             .fontWeight(.medium)
@@ -243,6 +228,10 @@ extension AddCouponView {
 
 struct AddCoupon_Previews: PreviewProvider {
     static var previews: some View {
-        AddCouponView(userInfoVM: iCloudUserInfoViewModel())
+        
+        let realm = realmWithData()
+        return NavigationView {
+            AddCouponView(couponList: realm.objects(CouponList.self).first!)
+        }
     }
 }

@@ -9,25 +9,9 @@ import SwiftUI
 import CloudKit
 import RealmSwift
 
-class HomeViewModel : ObservableObject {
-    
-//    private func saveCoupon(record: CKRecord) {
-//        CKContainer.default().publicCloudDatabase.save(record) { returnedRecord, returnedError in
-//            if let returnedRecord {
-//                print("Successful Coupon Upload")
-//            } else {
-//                print("Error in Coupon Upload")
-//            }
-//        }
-//    }
-    
-}
-
 struct HomeView: View {
     
     @StateObject var userInfoVM : iCloudUserInfoViewModel
-    @StateObject var homeVM = HomeViewModel()
-    
     @ObservedRealmObject var couponList: CouponList
     
     var body: some View {
@@ -52,7 +36,6 @@ extension HomeView {
     
     private var header : some View {
         Text("\(userInfoVM.firstName) \(userInfoVM.lastName)'s Coupon Hub")
-//        Text("Noah Michel's Coupon Hub")
             .padding(.horizontal, 35.0)
             .frame(width: 400, height: 60)
             .background(Color.gray.opacity(0.6))
@@ -61,7 +44,6 @@ extension HomeView {
             .minimumScaleFactor(0.01)
             .foregroundColor(Color.black)
             .cornerRadius(0)
-//            .border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/, width: /*@START_MENU_TOKEN@*/1/*@END_MENU_TOKEN@*/)
     }
     
     private var safeAreaTop : some View {
@@ -70,7 +52,7 @@ extension HomeView {
     
     private var addCouponButton : some View {
         NavigationLink {
-            AddCouponView(userInfoVM: userInfoVM)
+            AddCouponView(couponList: couponList)
         } label: {
             Text("Add a Coupon")
                 .font(.system(size: 32))
@@ -102,7 +84,7 @@ struct Home_Previews: PreviewProvider {
         let realm = realmWithData()
         return NavigationView {
             HomeView(userInfoVM: iCloudUserInfoViewModel(), couponList: realm.objects(CouponList.self).first!)
-                .environment(\.realm, realm)
+//                .environment(\.realm, realm)
         }
     }
 }

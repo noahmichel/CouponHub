@@ -10,13 +10,13 @@ import RealmSwift
 
 class Coupon: Object, ObjectKeyIdentifiable {
     @Persisted(primaryKey: true) var _id: ObjectId = ObjectId.generate()
-    @Persisted var company = ""
-    @Persisted var discountCode = 0
-    @Persisted var couponDescription = ""
+    @Persisted var company: String = ""
+    @Persisted var discountCode: String = ""
+    @Persisted var couponDescription: String = ""
     @Persisted var date: Date = Date()
     var couponImage: NSData? = nil
     
-    convenience init(_id: ObjectId, company: String = "", discountCode: Int = 0, couponDescription: String = "", date: Date, couponImage: NSData? = nil) {
+    convenience init(_id: ObjectId, company: String = "", discountCode: String = "", couponDescription: String = "", date: Date, couponImage: NSData? = nil) {
         self.init()
         self._id = _id
         self.company = company
