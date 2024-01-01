@@ -39,7 +39,6 @@ extension HomeView {
     
     private var header : some View {
         Text("FirstName LastName's Coupon Hub")
-            .padding(.horizontal, 35.0)
             .frame(width: 400, height: 60)
             .background(Color.gray.opacity(0.6))
             .font(.system(size: 500))
@@ -47,6 +46,7 @@ extension HomeView {
             .minimumScaleFactor(0.01)
             .foregroundColor(Color.black)
             .cornerRadius(0)
+            .padding(.horizontal)
     }
     
     private var safeAreaTop : some View {
@@ -85,9 +85,6 @@ extension HomeView {
 struct Home_Previews: PreviewProvider {
     static var previews: some View {
         let realm = realmWithData()
-        return NavigationView {
-            HomeView(couponList: realm.objects(CouponList.self).first!)
-//                .environment(\.realm, realm)
-        }
+        HomeView(couponList: realm.objects(CouponList.self).first!)
     }
 }

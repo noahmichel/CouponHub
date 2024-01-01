@@ -24,39 +24,36 @@ struct AddCouponView: View {
     @State var imageUploaded = false
     
     var body: some View {
-        
-        NavigationView {
-            VStack {
-                List {
-                    header
-                    companyTextField
-                    discountTextField
-                    descriptionTextField
-                    datePicker
-                    photoPickerTitle
-                    HStack (spacing: 40) {
-                        VStack {
-                            ZStack {
-                                photoPickerCamera
-                            }.sheet(isPresented: $openCameraRoll) {
-                                ImagePicker(selectedImage: $selectedImage, sourceType: sourceType)
-                            }
-                            photoPickerSubTitleCamera
-                        }
-                        VStack {
-                            ZStack {
-                                photoPickerPhotos
-                            }.sheet(isPresented: $openCameraRoll) {
-                                ImagePicker(selectedImage: $selectedImage, sourceType: sourceType)
-                            }
-                            photoPickerSubTitlePhotos
-                        }
-                    }
-                }
-                Spacer()
-                addCouponButton
-                    
+        VStack {
+            List {
+                header
+                companyTextField
+                discountTextField
+                descriptionTextField
+                datePicker
+//                photoPickerTitle
+//                HStack (spacing: 40) {
+//                    VStack {
+//                        ZStack {
+//                            photoPickerCamera
+//                        }.sheet(isPresented: $openCameraRoll) {
+//                            ImagePicker(selectedImage: $selectedImage, sourceType: sourceType)
+//                        }
+//                        photoPickerSubTitleCamera
+//                    }
+//                    VStack {
+//                        ZStack {
+//                            photoPickerPhotos
+//                        }.sheet(isPresented: $openCameraRoll) {
+//                            ImagePicker(selectedImage: $selectedImage, sourceType: sourceType)
+//                        }
+//                        photoPickerSubTitlePhotos
+//                    }
+//                }
             }
+            Spacer()
+            addCouponButton
+                
         }
 //        .navigationBarHidden(true)
 //        .navigationBarItems(leading: backBarButtonItem)
@@ -230,10 +227,7 @@ extension AddCouponView {
 
 struct AddCoupon_Previews: PreviewProvider {
     static var previews: some View {
-        
         let realm = realmWithData()
-        return NavigationView {
-            AddCouponView(couponList: realm.objects(CouponList.self).first!)
-        }
+        AddCouponView(couponList: realm.objects(CouponList.self).first!)
     }
 }
