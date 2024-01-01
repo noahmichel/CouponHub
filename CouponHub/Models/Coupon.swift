@@ -16,6 +16,8 @@ class Coupon: Object, ObjectKeyIdentifiable {
     @Persisted var date: Date = Date()
     var couponImage: NSData? = nil
     
+    @Persisted(originProperty: "couponList") var couponList: LinkingObjects<CouponList>
+    
     convenience init(_id: ObjectId, company: String = "", discountCode: String = "", couponDescription: String = "", date: Date, couponImage: NSData? = nil) {
         self.init()
         self._id = _id

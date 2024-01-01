@@ -102,7 +102,7 @@ struct iCloudUserInfoView: View {
                 Text("Welcome: \(vm.firstName) \(vm.lastName)")
             }
         } else {
-            HomeView(userInfoVM: vm, couponList: CouponList())
+            HomeView(couponList: CouponList())
         }
     }
 }

@@ -58,8 +58,8 @@ struct AddCouponView: View {
                     
             }
         }
-        .navigationBarHidden(true)
-        .navigationBarItems(leading: navigationBarBackButtonHidden())
+//        .navigationBarHidden(true)
+//        .navigationBarItems(leading: backBarButtonItem)
     }
 }
 
@@ -81,8 +81,8 @@ extension AddCouponView {
     
     private var addCouponButton : some View {
         Button {
-            $couponList.CouponList.append(coupon)
-            couponSavedSuccessfully = true
+//            $couponList.CouponList.append(coupon)
+//            couponSavedSuccessfully = true
 
         } label: {
             Text("Save Coupon")

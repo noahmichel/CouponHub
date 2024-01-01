@@ -6,16 +6,24 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 @main
-struct CouponHub: App {
+struct CouponHub: SwiftUI.App {
     let persistenceController = PersistenceController.shared
+    @ObservedResults(CouponList.self) var couponList
 
     var body: some Scene {
         WindowGroup {
-            iCloudUserInfoView().environment(\.managedObjectContext, persistenceController.container.viewContext)
-//            ContentView()
-//                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            if couponList.first != nil {
+                HomeView(couponList: couponList.first!)
+                    .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            } else {
+                ProgressView()
+                    .onAppear {
+                        $couponList.append(CouponList())
+                    }
+            }
         }
     }
 }

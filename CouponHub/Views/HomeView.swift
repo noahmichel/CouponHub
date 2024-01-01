@@ -11,25 +11,26 @@ import RealmSwift
 
 struct HomeView: View {
     
-    @StateObject var userInfoVM : iCloudUserInfoViewModel
     @ObservedRealmObject var couponList: CouponList
-    
+
     var body: some View {
-        VStack (spacing: 0) {
-            safeAreaTop
-            header
-            addCouponButton
-            List {
-                ForEach(couponList.CouponList) { coupon in
-                    NavigationLink(destination: CouponDetailView(coupon: coupon)) {
-                        couponCell(coupon: coupon)
+        NavigationView {
+            VStack (spacing: 0) {
+                safeAreaTop
+                header
+                addCouponButton
+                List {
+                    ForEach(couponList.couponList) { coupon in
+                        NavigationLink(destination: CouponDetailView(coupon: coupon)) {
+                            couponCell(coupon: coupon)
+                        }
                     }
+                    .onDelete(perform: $couponList.couponList.remove)
+                    .onMove(perform: $couponList.couponList.move)
                 }
-                .onDelete(perform: $couponList.CouponList.remove)
-                .onMove(perform: $couponList.CouponList.move)
+                .navigationBarItems(trailing: EditButton())
+                .listStyle(PlainListStyle())
             }
-            .navigationBarItems(trailing: EditButton())
-            .listStyle(PlainListStyle())
         }
     }
 }
@@ -37,7 +38,7 @@ struct HomeView: View {
 extension HomeView {
     
     private var header : some View {
-        Text("\(userInfoVM.firstName) \(userInfoVM.lastName)'s Coupon Hub")
+        Text("FirstName LastName's Coupon Hub")
             .padding(.horizontal, 35.0)
             .frame(width: 400, height: 60)
             .background(Color.gray.opacity(0.6))
@@ -85,7 +86,7 @@ struct Home_Previews: PreviewProvider {
     static var previews: some View {
         let realm = realmWithData()
         return NavigationView {
-            HomeView(userInfoVM: iCloudUserInfoViewModel(), couponList: realm.objects(CouponList.self).first!)
+            HomeView(couponList: realm.objects(CouponList.self).first!)
 //                .environment(\.realm, realm)
         }
     }

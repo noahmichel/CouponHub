@@ -28,7 +28,7 @@ extension PreviewProvider {
             let couponList = CouponList()
             
             for i in 1...5 {
-                couponList.CouponList.append(Coupon(_id: ObjectId.generate(), company: "Company \(i)", discountCode: "123\(i)", couponDescription: "description \(i)", date: Date()))
+                couponList.couponList.append(Coupon(_id: ObjectId.generate(), company: "Company \(i)", discountCode: "123\(i)", couponDescription: "description \(i)", date: Date()))
             }
             
             try? realm.write({

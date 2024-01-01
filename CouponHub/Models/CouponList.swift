@@ -10,5 +10,5 @@ import RealmSwift
 
 class CouponList: Object, ObjectKeyIdentifiable {
     @Persisted(primaryKey: true) var _id: ObjectId
-    @Persisted var CouponList = RealmSwift.List<Coupon>()
+    @Persisted var couponList = RealmSwift.List<Coupon>()
 }
