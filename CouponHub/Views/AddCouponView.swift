@@ -12,9 +12,13 @@ import RealmSwift
 
 struct AddCouponView: View {
     
-    @ObservedRealmObject var coupon: Coupon = Coupon()
     @ObservedRealmObject var couponList: CouponList
-    @State var couponSavedSuccessfully: Bool = false
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    
+    @State var newCompany = ""
+    @State var newDiscountCode = ""
+    @State var newDescription = ""
+    @State var newDate = Date()
     
     var birthDateTxt = ViewController()
     @State var changeImage = false
@@ -52,8 +56,11 @@ struct AddCouponView: View {
 //                }
             }
             Spacer()
-            addCouponButton
-                
+            if newCompany.isEmpty || newDiscountCode.isEmpty || newDescription.isEmpty || newDate.description.isEmpty {
+                addCouponButton.disabled(true)
+            } else {
+                addCouponButton.disabled(false)
+            }
         }
 //        .navigationBarHidden(true)
 //        .navigationBarItems(leading: backBarButtonItem)
@@ -72,14 +79,16 @@ extension AddCouponView {
             .cornerRadius(0)
     }
     
-//    private var safeAreaTop : some View {
-//        LinearGradient(colors: [.white], startPoint: .top, endPoint: .bottom).edgesIgnoringSafeArea(.top).opacity(0.6).frame(maxWidth: .infinity, maxHeight: 0)
-//    }
-    
     private var addCouponButton : some View {
         Button {
-//            $couponList.CouponList.append(coupon)
-//            couponSavedSuccessfully = true
+            if let newCouponList = couponList.thaw(),
+               let realm = newCouponList.realm {
+                
+                try? realm.write {
+                    newCouponList.couponList.append(Coupon(_id: ObjectId.generate(), company: newCompany, discountCode: newDiscountCode, couponDescription: newDescription, date: newDate))
+                }
+                self.presentationMode.wrappedValue.dismiss()
+            }
 
         } label: {
             Text("Save Coupon")
@@ -97,7 +106,7 @@ extension AddCouponView {
     }
     
     private var companyTextField : some View {
-        TextField("Company", text: $coupon.company)
+        TextField("Company", text: $newCompany)
             .frame(height: 50)
             .padding(.horizontal, 15)
             .background(Color.gray.opacity(0.1))
@@ -107,7 +116,7 @@ extension AddCouponView {
     }
     
     private var discountTextField : some View {
-        TextField("Discount Code", text: $coupon.discountCode)
+        TextField("Discount Code", text: $newDiscountCode)
             .frame(height: 50)
             .padding(.horizontal, 15)
             .background(Color.gray.opacity(0.1))
@@ -117,7 +126,7 @@ extension AddCouponView {
     }
     
     private var descriptionTextField : some View {
-        TextField("Discount Description", text: $coupon.couponDescription, axis: .vertical)
+        TextField("Discount Description", text: $newDescription, axis: .vertical)
             .frame(height: 100, alignment: .top)
             .padding(.horizontal, 15)
             .padding(.vertical, 10)
@@ -128,7 +137,7 @@ extension AddCouponView {
     }
     
     private var datePicker : some View {
-        DatePicker("Expiration Date", selection: $coupon.date, in: Date()..., displayedComponents: .date)
+        DatePicker("Expiration Date", selection: $newDate, in: Date()..., displayedComponents: .date)
             .padding(.horizontal, 20)
             .padding(.vertical, 10)
             .fontWeight(.medium)
