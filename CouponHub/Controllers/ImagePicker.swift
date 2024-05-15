@@ -17,7 +17,7 @@ struct ImagePicker : UIViewControllerRepresentable {
     //photoLibrary can be changed to camera
     var sourceType: UIImagePickerController.SourceType = .photoLibrary
     
-    func makeUIViewController(context: Context) -> some UIViewController {
+    func makeUIViewController(context: UIViewControllerRepresentableContext<ImagePicker>) -> some UIImagePickerController {
         
         let imagePicker = UIImagePickerController()
         imagePicker.allowsEditing = false
@@ -41,7 +41,8 @@ struct ImagePicker : UIViewControllerRepresentable {
            }
            
        
-           func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+           func imagePickerController(_ picker: UIImagePickerController, 
+                                      didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
                if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
                    parent.selectedImage = image

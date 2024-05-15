@@ -10,6 +10,14 @@ import CloudKit
 import UIKit
 import RealmSwift
 
+func isImageSelected(image: UIImage) -> Bool {
+    if image.size.width > 0 && image.size.height > 0 {
+        return true
+    } else {
+        return false
+    }
+}
+
 struct AddCouponView: View {
     
     @ObservedRealmObject var couponList: CouponList
@@ -21,9 +29,8 @@ struct AddCouponView: View {
     @State var newDate = Date()
     
     var birthDateTxt = ViewController()
-    @State var changeImage = false
-    @State var openCameraRoll = false
-    @State var selectedImage = UIImage()
+    @State var addImage = false
+    @State var selectedImage: UIImage = UIImage()
     @State var sourceType: UIImagePickerController.SourceType = .photoLibrary
     @State var imageUploaded = false
     
@@ -35,25 +42,16 @@ struct AddCouponView: View {
                 discountTextField
                 descriptionTextField
                 datePicker
-//                photoPickerTitle
-//                HStack (spacing: 40) {
-//                    VStack {
-//                        ZStack {
-//                            photoPickerCamera
-//                        }.sheet(isPresented: $openCameraRoll) {
-//                            ImagePicker(selectedImage: $selectedImage, sourceType: sourceType)
-//                        }
-//                        photoPickerSubTitleCamera
-//                    }
-//                    VStack {
-//                        ZStack {
-//                            photoPickerPhotos
-//                        }.sheet(isPresented: $openCameraRoll) {
-//                            ImagePicker(selectedImage: $selectedImage, sourceType: sourceType)
-//                        }
-//                        photoPickerSubTitlePhotos
-//                    }
-//                }
+                HStack (spacing: 40) {
+                    VStack {
+                        ZStack {
+                            addCouponImage
+                        }
+                        .sheet(isPresented: $addImage) {
+                            ImagePicker(selectedImage: $selectedImage, sourceType: sourceType)
+                        }
+                    }
+                }
             }
             Spacer()
             if newCompany.isEmpty || newDiscountCode.isEmpty || newDescription.isEmpty || newDate.description.isEmpty {
@@ -144,92 +142,29 @@ extension AddCouponView {
             .font(.system(size: 20))
     }
     
-    private var photoPickerTitle : some View {
-        Text("Upload Coupon Image")
-            .padding(.horizontal, 20)
-            .padding(.top, 10)
-            .fontWeight(.bold)
-            .font(.system(size: 20))
-    }
-    
-    private var photoPickerPhotos : some View {
-    
-        Button (action: {
-            sourceType = UIImagePickerController.SourceType.photoLibrary
-            changeImage = true
-            openCameraRoll = true
-            imageUploaded = true
-                
-            }, label: {
-                if changeImage {
-                    Image(uiImage: selectedImage)
-                        .resizable()
-                        .frame(width:150, height: 100)
+    private var addCouponImage : some View {
         
-                } else {
-                    Image(systemName: "photo")
-                        .resizable()
-                        .frame(width:150, height: 100)
-                        .font(.system(size: 150))
-                        .fontWeight(.light)
-                        .foregroundColor(Color.blue.opacity(0.8))
-                }
-            })
-        }
-    
-    private var photoPickerCamera : some View {
-        
-        Button (action: {
-            sourceType = UIImagePickerController.SourceType.camera
-            changeImage = true
-            openCameraRoll = true
-            imageUploaded = true
-                
-            }, label: {
-                if changeImage {
-                    Image(uiImage: selectedImage)
-                        .resizable()
-                        .frame(width:150, height: 100)
-        
-                } else {
-                    Image(systemName: "camera")
-                        .resizable()
-                        .frame(width:150, height: 100)
-                        .font(.system(size: 150))
-                        .fontWeight(.light)
-                        .foregroundColor(Color.blue.opacity(0.8))
-                }
-            })
-    }
-    
-    private var finalCouponPhoto : some View {
-    
-        Button (action: {
-            sourceType = UIImagePickerController.SourceType.photoLibrary
-            changeImage = true
-            openCameraRoll = true
-            imageUploaded = true
-                
-            }, label: {
+        Button( action: {
+            addImage = true
+        }, label: {
+            if addImage && isImageSelected(image: selectedImage) {
                 Image(uiImage: selectedImage)
                     .resizable()
-                    .frame(width:250, height: 150)
-            })
-        }
-    
-    private var photoPickerSubTitleCamera : some View {
-        Text("Take photo")
-            .fontWeight(.light)
-            .font(.system(size: 20))
-            .frame(width:150, height: 50)
-    }
-    
-    private var photoPickerSubTitlePhotos : some View {
-        Text("Choose from Camera Roll")
-            .fontWeight(.light)
-            .font(.system(size: 20))
-            .frame(width:150, height: 50)
-            
+                    .frame(width: 120, height: 120)
+            } else {
+                Text("Add Coupon Image")
+                    .font(.system(size: 16))
+                    .font(.headline)
+                    .fontWeight(.light)
+                    .foregroundColor(Color.black)
+                    .frame(height: 35)
+                    .frame(maxWidth: .infinity)
+                    .background(Color.blue.opacity(0.3))
+                    .cornerRadius(10)
+                    .padding(.horizontal, 50)
+                    .padding(.vertical, 10)
+            }
+        })
     }
 }
 
